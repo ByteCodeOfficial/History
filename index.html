@@ -8,30 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #8b0000;
-            --accent-color: #d4af37;
-            --light-color: #f8f9fa;
+            --primary-color: #8B4513;
+            --secondary-color: #2F4F4F;
+            --accent-color: #D2691E;
+            --light-color: #FDF5E6;
             --dark-color: #1a1a1a;
-            --paper-color: #f5f2e9;
+            --paper-color: #FFF8DC;
             --ink-color: #333333;
         }
         
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: 'Georgia', serif;
             background-color: var(--paper-color);
             color: var(--ink-color);
             line-height: 1.6;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23000" stroke-width="1"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%238B4513" stroke-width="1"/></svg>');
         }
         
         .vintage-header {
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8));
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: var(--light-color);
-            padding: 3rem 0;
-            border-bottom: 5px solid var(--accent-color);
+            padding: 4rem 0;
+            border-bottom: 8px solid var(--accent-color);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
         .vintage-header::before {
@@ -41,7 +42,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" opacity="0.1"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23d4af37" stroke-width="1"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" opacity="0.1"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%23D2691E" stroke-width="2"/></svg>');
             z-index: 0;
         }
         
@@ -52,108 +53,124 @@
         
         .literature-card {
             background-color: var(--light-color);
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
             overflow: hidden;
-            transition: transform 0.3s ease;
-            border-top: 3px solid var(--accent-color);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--accent-color);
+            border-top: 1px solid #e0d6c2;
         }
         
         .literature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
         }
         
         .card-header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
             color: var(--light-color);
-            padding: 15px;
+            padding: 18px;
             font-weight: bold;
+            font-size: 1.1em;
+            border-bottom: 2px solid var(--accent-color);
         }
         
         .card-body {
-            padding: 20px;
+            padding: 25px;
         }
         
         .quote {
             font-style: italic;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 15px;
-            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            margin: 25px 0;
             color: var(--secondary-color);
+            background-color: rgba(139, 69, 19, 0.05);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
         }
         
         .section-title {
             color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 12px;
+            margin-bottom: 35px;
             position: relative;
+            font-weight: bold;
         }
         
         .section-title::after {
             content: "";
             position: absolute;
-            bottom: -2px;
+            bottom: -3px;
             left: 0;
-            width: 100px;
-            height: 2px;
+            width: 120px;
+            height: 3px;
             background-color: var(--secondary-color);
         }
         
         .nav-pills .nav-link {
             color: var(--primary-color);
-            border-radius: 0;
-            border-bottom: 2px solid transparent;
-            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            margin-right: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .nav-pills .nav-link.active {
-            background-color: transparent;
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--secondary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-color);
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .decoration-element {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
-            margin: 30px 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--accent-color), var(--primary-color), var(--accent-color), transparent);
+            margin: 40px 0;
+            border-radius: 3px;
         }
         
         .timeline-period {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 20px 0;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 25px 0;
             position: relative;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .timeline-period::after {
             content: "";
             position: absolute;
-            left: 20px;
+            left: 25px;
             bottom: -10px;
             width: 0;
             height: 0;
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
-            border-top: 10px solid var(--primary-color);
+            border-top: 10px solid var(--secondary-color);
         }
         
         footer {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
             color: var(--light-color);
-            padding: 30px 0;
-            margin-top: 50px;
+            padding: 35px 0;
+            margin-top: 60px;
+            border-top: 5px solid var(--accent-color);
         }
         
         .author-highlight {
-            background: linear-gradient(135deg, #8b0000 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #8b0000 0%, var(--primary-color) 100%);
             color: white;
             padding: 30px;
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 25px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
         }
         
         .presentation-box {
@@ -161,7 +178,77 @@
             border: 2px solid var(--accent-color);
             border-radius: 10px;
             padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .question-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .question-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .answer-content {
+            display: none;
+            padding: 20px;
+            background-color: rgba(210, 105, 30, 0.08);
+            border-radius: 0 0 8px 8px;
+            border-top: 2px solid var(--accent-color);
+            margin-top: -5px;
+        }
+        
+        .book-icon {
+            color: var(--accent-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .stamp {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            opacity: 0.1;
+            font-size: 120px;
+            color: var(--accent-color);
+            transform: rotate(15deg);
+        }
+
+        .historical-badge {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #8b0000 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .author-signature {
+            font-family: 'Courier New', monospace;
+            border-top: 1px solid var(--accent-color);
+            padding-top: 10px;
+            margin-top: 20px;
+            color: var(--secondary-color);
+        }
+
+        .vintage-border {
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
             margin: 20px 0;
+            background: linear-gradient(145deg, #f5e8c8 0%, #fff8dc 100%);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -169,20 +256,29 @@
     <!-- Header Section -->
     <header class="vintage-header">
         <div class="container header-content">
+            <div class="historical-badge">
+                <i class="fas fa-history me-2"></i>Историческое исследование 2025
+            </div>
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <h1 class="display-4 fw-bold">Литература второй половины XX - начала XXI века</h1>
-                    <p class="lead">На основе архивных материалов и исторических документов</p>
+                    <p class="lead">Эволюция литературных направлений в историческом контексте</p>
+                    <div class="author-signature">
+                        <i class="fas fa-feather-alt me-2"></i>Автор исследования: Артем Коннов
+                    </div>
                 </div>
                 <div class="col-md-4 text-center">
-                    <i class="fas fa-archive fa-7x" style="color: var(--accent-color); opacity: 0.7;"></i>
+                    <i class="fas fa-book fa-8x book-icon"></i>
                 </div>
+            </div>
+            <div class="stamp">
+                <i class="fas fa-quill"></i>
             </div>
         </div>
     </header>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--primary-color);">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -202,7 +298,7 @@
                         <a class="nav-link" href="#postmodernism">Постмодернизм</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#modern">Современные тенденции</a>
+                        <a class="nav-link" href="#questions">Вопросы и ответы</a>
                     </li>
                 </ul>
             </div>
@@ -215,33 +311,43 @@
         <section id="postwar" class="mb-5">
             <h2 class="section-title">Послевоенная литература 1940-1950-х годов</h2>
             
-            <div class="timeline-period">1940-1950-е годы</div>
+            <div class="timeline-period">
+                <i class="fas fa-calendar-alt me-2"></i>1940-1950-е годы
+            </div>
             
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Военная тематика</div>
-                        <div class="card-body">
-                            <p>В 1940—1950-е гг. главной темой произведений искусства была Вторая мировая война. Событиям войны были посвящены памятники и монументы, литературные произведения, важнейшее место военная тема занимала в кинематографе, музыке, живописи.</p>
-                            <p>Во Франции к теме войны обращались писатели <strong>Л. Арагон, П. Элюар, А. Лану</strong>.</p>
+            <div class="vintage-border">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-monument me-2"></i>Военная тематика
+                            </div>
+                            <div class="card-body">
+                                <p>В 1940—1950-е гг. главной темой произведений искусства была Вторая мировая война. Событиям войны были посвящены памятники и монументы, литературные произведения, важнейшее место военная тема занимала в кинематографе, музыке, живописи.</p>
+                                <p>Во Франции к теме войны обращались писатели <strong>Л. Арагон, П. Элюар, А. Лану</strong>.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Немецкая литература</div>
-                        <div class="card-body">
-                            <p>В Германии главной стала тема преодоления нацистского прошлого («расчёт с прошлым»).</p>
-                            <p>В ГДР вышли такие романы, как <strong>«Пляска смерти» Б. Келлермана, «Мёртвые остаются молодыми» А. Зегерс</strong>.</p>
-                            <p>В ФРГ с огромной силой эти проблемы были подняты в произведениях ставшего впоследствии всемирно знаменитым писателя <strong>Г. Бёлля</strong> (роман «Где ты был, Адам?»).</p>
+                    
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-german-sign me-2"></i>Немецкая литература
+                            </div>
+                            <div class="card-body">
+                                <p>В Германии главной стала тема преодоления нацистского прошлого («расчёт с прошлым»).</p>
+                                <p>В ГДР вышли такие романы, как <strong>«Пляска смерти» Б. Келлермана, «Мёртвые остаются молодыми» А. Зегерс</strong>.</p>
+                                <p>В ФРГ с огромной силой эти проблемы были подняты в произведениях ставшего впоследствии всемирно знаменитым писателя <strong>Г. Бёлля</strong> (роман «Где ты был, Адам?»).</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="literature-card">
-                <div class="card-header">Эмигрантская литература</div>
+                <div class="card-header">
+                    <i class="fas fa-passport me-2"></i>Эмигрантская литература
+                </div>
                 <div class="card-body">
                     <p>Об этом же писали в своих произведениях немецкие писатели, жившие в годы войны в эмиграции (<strong>Т. Манн, Э. Ремарк</strong>).</p>
                     <p>Роман Э. Ремарка <strong>«Время жить и время умирать»</strong> ставил острейшую для ФРГ проблему ответственности не только нацистов, но и всех немцев за преступное ведение Германией войны в Советском Союзе.</p>
@@ -251,7 +357,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="literature-card">
-                        <div class="card-header">Американский реализм</div>
+                        <div class="card-header">
+                            <i class="fas fa-flag-usa me-2"></i>Американский реализм
+                        </div>
                         <div class="card-body">
                             <p>Для всех этих произведений характерен реалистический подход. Это же отличало творчество американских писателей того времени <strong>У. Фолкнера, Э. Хемингуэя</strong>.</p>
                             <p>Реализм в литературе сохранялся и позже.</p>
@@ -261,7 +369,9 @@
                 
                 <div class="col-md-6">
                     <div class="literature-card">
-                        <div class="card-header">Русское зарубежье</div>
+                        <div class="card-header">
+                            <i class="fas fa-dove me-2"></i>Русское зарубежье
+                        </div>
                         <div class="card-body">
                             <p>В мировой литературе второй половины XX в. ощущалось влияние традиций русского зарубежья — прозы, поэзии, публицистики русской эмиграции разных периодов (<strong>В. Набоков, И. Бунин, И. Шмелёв, Е. Замятин, Н. Тэффи</strong>).</p>
                         </div>
@@ -281,24 +391,30 @@
                 <p class="mb-0">На литературные процессы этого периода влияет философия <strong>экзистенциализма</strong> с присущими ей трагизмом в осмыслении жизни (А. Камю) и проблемой выбора (Ж.-П. Сартр).</p>
             </div>
             
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Основные идеи</div>
-                        <div class="card-body">
-                            <p>Экзистенциалисты проповедовали идеи абсурдности окружающего мира, внутренней свободы человека как возможности сделать выбор перед лицом судьбы.</p>
-                            <p>Мир перед лицом судьбы. В основе серии романов Сартра <strong>«Дороги свободы»</strong> лежали сюжеты, связанные с конфликтом между революциями общества и убеждениями героев романов.</p>
+            <div class="vintage-border">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-brain me-2"></i>Основные идеи
+                            </div>
+                            <div class="card-body">
+                                <p>Экзистенциалисты проповедовали идеи абсурдности окружающего мира, внутренней свободы человека как возможности сделать выбор перед лицом судьбы.</p>
+                                <p>В основе серии романов Сартра <strong>«Дороги свободы»</strong> лежали сюжеты, связанные с конфликтом между революциями общества и убеждениями героев романов.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Альбер Камю</div>
-                        <div class="card-body">
-                            <p>В романе Камю <strong>«Чума»</strong> ставилась проблема выполнения общественного долга в условиях бедствий.</p>
-                            <div class="quote">
-                                "Во всех книгах говорится о других книгах, что всякая история пересказывает историю, уже рассказанную." - Умберто Эко
+                    
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-user me-2"></i>Альбер Камю
+                            </div>
+                            <div class="card-body">
+                                <p>В романе Камю <strong>«Чума»</strong> ставилась проблема выполнения общественного долга в условиях бедствий.</p>
+                                <div class="quote">
+                                    "Во всех книгах говорится о других книгах, что всякая история пересказывает историю, уже рассказанную." - Умберто Эко
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -312,30 +428,40 @@
         <section id="absurd" class="mb-5">
             <h2 class="section-title">Театр абсурда и авангард</h2>
             
-            <div class="timeline-period">1950-1960-е годы</div>
+            <div class="timeline-period">
+                <i class="fas fa-calendar-alt me-2"></i>1950-1960-е годы
+            </div>
             
             <div class="literature-card">
-                <div class="card-header">Авангардные течения</div>
+                <div class="card-header">
+                    <i class="fas fa-mask me-2"></i>Авангардные течения
+                </div>
                 <div class="card-body">
                     <p><strong>Авангардные течения</strong> представлены прозой и драматургией <strong>Э. Ионеско и С. Беккета</strong>, породившей новое направление в театре — <strong>театр абсурда</strong> (пьеса <strong>«В ожидании Годо»</strong> С. Беккета).</p>
                 </div>
             </div>
             
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Латинская Америка</div>
-                        <div class="card-body">
-                            <p>Большим успехом с 1960-х гг. пользовались авангардистские произведения писателей и поэтов Латинской Америки (<strong>Х. Борхес, Х. Кортасар, Г. Маркес</strong> и др.).</p>
+            <div class="vintage-border">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-globe-americas me-2"></i>Латинская Америка
+                            </div>
+                            <div class="card-body">
+                                <p>Большим успехом с 1960-х гг. пользовались авангардистские произведения писателей и поэтов Латинской Америки (<strong>Х. Борхес, Х. Кортасар, Г. Маркес</strong> и др.).</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Нобелевские лауреаты</div>
-                        <div class="card-body">
-                            <p>Нобелевской премии по литературе во второй половине XX в. получили <strong>М. Шолохов, Б. Пастернак, А. Солженицын и И. Бродский</strong>.</p>
+                    
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-award me-2"></i>Нобелевские лауреаты
+                            </div>
+                            <div class="card-body">
+                                <p>Нобелевской премии по литературе во второй половине XX в. получили <strong>М. Шолохов, Б. Пастернак, А. Солженицын и И. Бродский</strong>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -348,33 +474,43 @@
         <section id="postmodernism" class="mb-5">
             <h2 class="section-title">Постмодернизм и современные тенденции</h2>
             
-            <div class="timeline-period">Конец XX - начало XXI века</div>
+            <div class="timeline-period">
+                <i class="fas fa-calendar-alt me-2"></i>Конец XX - начало XXI века
+            </div>
             
             <div class="literature-card">
-                <div class="card-header">Философия постмодернизма</div>
+                <div class="card-header">
+                    <i class="fas fa-philosophy me-2"></i>Философия постмодернизма
+                </div>
                 <div class="card-body">
                     <p>Литература конца XX — начала XXI в. во многом связана с философскими концепциями <strong>постмодернизма</strong>.</p>
                     <p>У. Эко — известный философ, эстетик, писатель, размышляя о литературе второй половины XX — начала XXI в. в эссе «Сотворить читателя», заметил, что «во всех книгах говорится о других книгах, что всякая история пересказывает историю, уже рассказанную. Это знал Гомер, знал Ариосто, не говоря уже о Рабле и Сервантесе».</p>
                 </div>
             </div>
             
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Жанр фэнтези</div>
-                        <div class="card-body">
-                            <p>Одно из господствующих положений в литературе занял жанр <strong>фэнтези</strong>, в котором авторы помещают своих героев в придуманный ими мир.</p>
-                            <p>Среди таких произведений особо следует выделить серию романов <strong>«Властелин колец»</strong> англичанина <strong>Дж. Толкиена</strong>, романы о мальчике-волшебнике Гарри Поттере <strong>Дж. Роулинг</strong>.</p>
+            <div class="vintage-border">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-dragon me-2"></i>Жанр фэнтези
+                            </div>
+                            <div class="card-body">
+                                <p>Одно из господствующих положений в литературе занял жанр <strong>фэнтези</strong>, в котором авторы помещают своих героев в придуманный ими мир.</p>
+                                <p>Среди таких произведений особо следует выделить серию романов <strong>«Властелин колец»</strong> англичанина <strong>Дж. Толкиена</strong>, романы о мальчике-волшебнике Гарри Поттере <strong>Дж. Роулинг</strong>.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="literature-card">
-                        <div class="card-header">Современные тенденции</div>
-                        <div class="card-body">
-                            <p>Развитие европейской и мировой литературы в конце XX — начале XXI в. отличается противоречивыми тенденциями. На прозу, поэзию, драматургию оказывают влияние процессы глобализации и развития новых информационных технологий.</p>
-                            <p>В их числе <strong>англизация культуры, коммерциализация в области книгоиздания, экспансия массовой культуры</strong> и др.</p>
+                    
+                    <div class="col-md-6">
+                        <div class="literature-card">
+                            <div class="card-header">
+                                <i class="fas fa-chart-line me-2"></i>Современные тенденции
+                            </div>
+                            <div class="card-body">
+                                <p>Развитие европейской и мировой литературы в конце XX — начале XXI в. отличается противоречивыми тенденциями. На прозу, поэзию, драматургию оказывают влияние процессы глобализации и развития новых информационных технологий.</p>
+                                <p>В их числе <strong>англизация культуры, коммерциализация в области книгоиздания, экспансия массовой культуры</strong> и др.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -383,36 +519,52 @@
 
         <div class="decoration-element"></div>
 
-        <!-- Modern Trends Section -->
-        <section id="modern" class="mb-5">
-            <h2 class="section-title">Современная литературная ситуация</h2>
-            
-            <div class="literature-card">
-                <div class="card-header">Информационная эпоха</div>
-                <div class="card-body">
-                    <p>В начале XXI в. критерии культурного и антикультурного значительно трансформировались под воздействием новых информационных технологий.</p>
-                    <p>В современной литературе наблюдается попытка осмыслить реальность информационной эпохи, для которой характерно многообразие мифов, сближение массового и элитарного искусства, появление новых тенденций и направлений.</p>
-                </div>
-            </div>
+        <!-- Questions Section -->
+        <section id="questions" class="mb-5">
+            <h2 class="section-title">Вопросы и ответы</h2>
             
             <div class="presentation-box">
-                <h3><i class="fas fa-scroll me-2"></i>Вопросы для обсуждения</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card bg-light mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Вопрос 1</h5>
-                                <p class="card-text">Какие направления появились в литературе в послевоенные годы?</p>
-                            </div>
-                        </div>
+                <h3 class="text-center mb-4"><i class="fas fa-question-circle me-2"></i>Вопросы для обсуждения</h3>
+                
+                <div class="question-card literature-card" onclick="toggleAnswer('answer1')">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Вопрос 1</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card bg-light mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Вопрос 2</h5>
-                                <p class="card-text">Какие проблемы поднимали писатели в своих произведениях?</p>
-                            </div>
-                        </div>
+                    <div class="card-body">
+                        <p class="mb-0">Какие направления появились в литературе в послевоенные годы?</p>
+                    </div>
+                    <div id="answer1" class="answer-content">
+                        <p><strong>Основные направления послевоенной литературы:</strong></p>
+                        <ul>
+                            <li><strong>Реализм</strong> - продолжение традиций реалистической литературы с акцентом на военную тематику</li>
+                            <li><strong>Экзистенциализм</strong> - философское направление, исследующее проблемы выбора и абсурдности существования</li>
+                            <li><strong>Литература "расчёта с прошлым"</strong> - особенно в Германии, посвящённая преодолению нацистского прошлого</li>
+                            <li><strong>Эмигрантская литература</strong> - произведения писателей, вынужденных покинуть свои страны</li>
+                            <li><strong>Социалистический реализм</strong> - в странах социалистического лагеря</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="question-card literature-card" onclick="toggleAnswer('answer2')">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Вопрос 2</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-0">Какие проблемы поднимали писатели в своих произведениях?</p>
+                    </div>
+                    <div id="answer2" class="answer-content">
+                        <p><strong>Ключевые проблемы в литературе этого периода:</strong></p>
+                        <ul>
+                            <li><strong>Последствия Второй мировой войны</strong> - травма, разрушения, моральные dilemmas</li>
+                            <li><strong>Ответственность за преступления нацизма</strong> - проблема коллективной вины</li>
+                            <li><strong>Экзистенциальные вопросы</strong> - смысл жизни, свобода выбора, абсурдность существования</li>
+                            <li><strong>Конфликт личности и общества</strong> - в произведениях Сартра, Камю</li>
+                            <li><strong>Проблема эмиграции и ностальгии</strong> - в творчестве писателей русского зарубежья</li>
+                            <li><strong>Общественный долг и моральная ответственность</strong> - особенно в романе Камю "Чума"</li>
+                            <li><strong>Критика тоталитаризма</strong> - в произведениях Солженицына и других диссидентов</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -425,11 +577,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <h5>Литература второй половины XX - начала XXI века</h5>
-                    <p>На основе архивных материалов и исторических документов</p>
+                    <p>Историко-литературное исследование</p>
                 </div>
                 <div class="col-md-6 text-end">
-                    <p>Создано на основе предоставленных текстовых материалов</p>
-                    <p>© 2023 Исторический анализ литературного процесса</p>
+                    <p>© 2025 Артем Коннов</p>
+                    <p>Академическое исследование</p>
                 </div>
             </div>
         </div>
@@ -480,6 +632,28 @@
                 }
             });
         });
+
+        // Toggle answer visibility
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            const isVisible = answer.style.display === 'block';
+            
+            // Close all answers
+            document.querySelectorAll('.answer-content').forEach(element => {
+                element.style.display = 'none';
+            });
+            
+            // Reset all chevron icons
+            document.querySelectorAll('.card-header i.fa-chevron-down').forEach(icon => {
+                icon.className = 'fas fa-chevron-down';
+            });
+            
+            // Toggle current answer
+            if (!isVisible) {
+                answer.style.display = 'block';
+                event.currentTarget.querySelector('.card-header i').className = 'fas fa-chevron-up';
+            }
+        }
     </script>
 </body>
-</html>
+                            </html>
